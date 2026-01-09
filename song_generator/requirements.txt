@@ -1,0 +1,8 @@
+streamlit
+pandas
+numpy
+faker
+requests
+beautifulsoup4
+textblob
+googletrans==4.0.0-rc1

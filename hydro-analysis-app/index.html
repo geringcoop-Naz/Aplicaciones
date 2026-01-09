@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HydroStat - Análisis de Cuencas</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/simple-statistics/7.8.0/simple-statistics.min.js"></script>
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <nav class="sidebar">
+            <div class="logo">
+                <i class="fa-solid fa-water"></i>
+                <span>HydroStat</span>
+            </div>
+            <ul class="nav-links">
+                <li class="active" data-tab="dashboard">
+                    <i class="fa-solid fa-chart-pie"></i>
+                    <span>Dashboard</span>
+                </li>
+                <li data-tab="upload">
+                    <i class="fa-solid fa-upload"></i>
+                    <span>Cargar Datos</span>
+                </li>
+                <li data-tab="analysis">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <span>Análisis</span>
+                </li>
+                <li data-tab="reports">
+                    <i class="fa-solid fa-file-pdf"></i>
+                    <span>Reportes</span>
+                </li>
+            </ul>
+            <div class="user-profile">
+                <div class="avatar">U</div>
+                <div class="user-info">
+                    <span class="name">Usuario</span>
+                    <span class="role">Hidrólogo</span>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="top-bar">
+                <h1 id="page-title">Dashboard</h1>
+                <div class="actions">
+                    <button class="btn-icon"><i class="fa-solid fa-bell"></i></button>
+                    <button class="btn-icon"><i class="fa-solid fa-gear"></i></button>
+                </div>
+            </header>
+
+            <!-- Views -->
+            <div id="dashboard-view" class="view active">
+                <div class="hero-card">
+                    <div class="hero-text">
+                        <h2>Bienvenido a HydroStat</h2>
+                        <p>Plataforma avanzada para el análisis estadístico e hidrológico de cuencas.</p>
+                        <button class="btn-primary" onclick="app.navigateTo('upload')">Comenzar Análisis</button>
+                    </div>
+                    <div class="hero-decoration">
+                        <i class="fa-solid fa-cloud-showers-heavy"></i>
+                    </div>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="icon-box blue"><i class="fa-solid fa-droplet"></i></div>
+                        <div class="stat-info">
+                            <h3>Estaciones</h3>
+                            <p class="value" id="station-count">0</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="icon-box green"><i class="fa-solid fa-calendar-days"></i></div>
+                        <div class="stat-info">
+                            <h3>Años de Datos</h3>
+                            <p class="value" id="years-count">0</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="icon-box purple"><i class="fa-solid fa-ruler-vertical"></i></div>
+                        <div class="stat-info">
+                            <h3>Caudal Máximo</h3>
+                            <p class="value" id="max-flow">0 m³/s</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="upload-view" class="view">
+                <div class="upload-container">
+                    <div class="upload-area" id="drop-zone">
+                        <i class="fa-solid fa-cloud-arrow-up"></i>
+                        <h3>Arrastra tus archivos CSV aquí</h3>
+                        <p>o haz clic para seleccionar</p>
+                        <input type="file" id="file-input" accept=".csv" hidden>
+                        <p class="hint">Formatos soportados: CSV (Fecha, Precipitación, Caudal)</p>
+                    </div>
+                    <div class="file-list" id="file-list">
+                        <!-- Files will appear here -->
+                    </div>
+                </div>
+            </div>
+
+            <div id="analysis-view" class="view">
+                <div class="charts-grid">
+                    <div class="chart-card full-width">
+                        <div class="card-header">
+                            <h3>Hidrograma y Hietograma</h3>
+                            <div class="card-actions">
+                                <select id="year-filter" class="select-input">
+                                    <option value="all">Todos los años</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="mainChart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="chart-card">
+                        <h3>Curva de Duración de Caudales</h3>
+                        <div class="chart-container">
+                            <canvas id="fdcChart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="chart-card">
+                        <h3>Estadísticas Mensuales</h3>
+                        <div class="chart-container">
+                            <canvas id="monthlyChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="analysis-summary">
+                    <h3>Resumen Estadístico</h3>
+                    <div class="table-responsive">
+                        <table class="data-table" id="stats-table">
+                            <thead>
+                                <tr>
+                                    <th>Parámetro</th>
+                                    <th>Valor</th>
+                                    <th>Unidad</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Stats rows -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div id="reports-view" class="view">
+                <div class="empty-state">
+                    <i class="fa-solid fa-clipboard-list"></i>
+                    <h3>Generación de Reportes</h3>
+                    <p>Próximamente podrás exportar tus análisis a PDF.</p>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <script src="js/analysis.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
