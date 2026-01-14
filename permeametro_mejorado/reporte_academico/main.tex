@@ -1,0 +1,245 @@
+\documentclass[12pt, letterpaper]{article}
+
+% Paquetes de codificación y lenguaje
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish, es-tabla]{babel}
+
+% Paquetes de formato y diseño
+\usepackage{geometry}
+\geometry{
+    left=3cm,
+    right=2.5cm,
+    top=2.5cm,
+    bottom=2.5cm
+}
+\usepackage{setspace}
+\onehalfspacing
+
+% Paquetes para gráficos y figuras
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{subcaption}
+
+% Paquetes para matemáticas y símbolos
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{gensymb} % Para símbolos de grados
+
+% Paquetes para tablas
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{longtable}
+
+% Paquetes para hipervínculos
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    citecolor=blue,
+    filecolor=magenta,
+    urlcolor=blue
+}
+
+% Paquete para código (si necesitas incluir scripts SCAD)
+\usepackage{listings}
+\usepackage{xcolor}
+
+% Definición de estilo para código
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+\lstset{style=mystyle}
+
+% --------------------------------------------------------------------------
+% INFORMACIÓN DEL DOCUMENTO
+% --------------------------------------------------------------------------
+\title{Optimización y Rediseño del Sistema de Sellado en un Permeámetro de Carga Constante para Suelos}
+\author{Ing. [Tu Nombre Completo]}
+\date{\today}
+
+% --------------------------------------------------------------------------
+% INICIO DEL DOCUMENTO
+% --------------------------------------------------------------------------
+\begin{document}
+
+% --- PORTADA ---
+\begin{titlepage}
+    \centering
+    \vspace*{1cm}
+    
+    \Large\textbf{UNIVERSIDAD [NOMBRE DE TU UNIVERSIDAD]}\\
+    \normalsize FACULTAD DE INGENIERÍA\\
+    MAESTRÍA EN INGENIERÍA EN CIENCIAS DEL AGUA
+    
+    \vspace{3cm}
+    
+    \Huge\textbf{Optimización y Rediseño del Sistema de Sellado en un Permeámetro de Columna}
+    
+    \vspace{1.5cm}
+    
+    \Large\textbf{REPORTE TÉCNICO DE PROYECTO}
+    
+    \vspace{2cm}
+    
+    \textbf{Presentado por:}\\
+    Ing. [Tu Nombre Completo]
+    
+    \vspace{0.5cm}
+    
+    \textbf{Asignatura/Proyecto:}\\
+    [Nombre de la Asignatura o Tesis]
+    
+    \vspace{3cm}
+    
+    \normalsize [Ciudad, País]\\
+    \monthname[\the\month] de \the\year
+    
+\end{titlepage}
+
+% --- ÍNDICES ---
+\tableofcontents
+\newpage
+\listoffigures
+\newpage
+\listoftables
+\newpage
+
+% --- CONTENIDO PRINCIPAL ---
+
+\section{Introducción}
+El estudio del transporte de contaminantes y la permeabilidad en suelos requiere equipos experimentales de alta precisión y confiabilidad. El permeámetro de columna es un instrumento fundamental para determinar la conductividad hidráulica y analizar fenómenos de transporte en medios porosos saturados y no saturados.
+
+En el contexto de la investigación actual, se identificaron fallas operativas críticas en el prototipo existente, específicamente relacionadas con la integridad hermética del sistema. Este documento detalla el diagnóstico, la propuesta de diseño y las especificaciones técnicas para la manufactura de un sistema de sellado mejorado, asegurando la validez de los datos experimentales futuros.
+
+\section{Planteamiento del Problema}
+Durante las pruebas preliminares del permeámetro de columna existente, se detectaron filtraciones sistemáticas en la interfaz tapa-columna al operar bajo presiones hidráulicas superiores a 0.5 bar.
+
+\subsection{Diagnóstico de Fallas}
+El análisis forense del diseño original reveló las siguientes deficiencias:
+\begin{itemize}
+    \item \textbf{Carencia de sistema de compresión mecánica:} La tapa dependía de un ajuste por fricción o pegado simple, insuficiente para resistir la presión interna generada por la bomba peristáltica.
+    \item \textbf{Sellado precario:} Ausencia de un alojamiento (canal) adecuado para el O-ring, provocando la extrusión del mismo bajo carga.
+    \item \textbf{Deformación de materiales:} El espesor insuficiente de la tapa original provocaba deflexiones que comprometían el sello plano.
+\end{itemize}
+
+\section{Objetivos}
+\subsection{Objetivo General}
+Rediseñar el cabezal superior y la base del permeámetro para garantizar la hermeticidad del sistema hasta una presión operativa de 2.0 bar, permitiendo ensayos de flujo saturado prolongados.
+
+\subsection{Objetivos Específicos}
+\begin{itemize}
+    \item Diseñar un sistema de brida con sujeción mecánica mediante pernos para asegurar una compresión uniforme.
+    \item Implementar un sistema de sellado mediante O-ring alojado en canal mecanizado según normas ISO.
+    \item Optimizar la distribución del flujo de entrada mediante un difusor para evitar la erosión y canalización preferencial en la muestra de suelo.
+    \item Generar la documentación técnica y planos de manufactura para la fabricación de los componentes en acrílico y acero inoxidable.
+\end{itemize}
+
+\section{Metodología de Diseño}
+El rediseño se basó en principios de diseño mecánico para recipientes a presión y normas de estanqueidad. Se seleccionó el acrílico (PMMA) cast por su transparencia y resistencia química, y acero inoxidable 316L para componentes en contacto con soluciones salinas agresivas.
+
+El proceso de diseño asistido por computadora (CAD) se realizó utilizando OpenSCAD, permitiendo una parametrización completa de las dimensiones para futuros ajustes.
+
+\section{Propuesta Técnica y Resultados del Diseño}
+
+\subsection{Sistema de Tapa Superior (PRM-001)}
+La solución adoptada consiste en una tapa de acrílico de 15 mm de espesor con un sistema de brida perimetral.
+
+\subsubsection{Características Principales}
+\begin{itemize}
+    \item \textbf{Brida:} $\varnothing$120 mm con 8 perforaciones para pernos M6, distribuidos en un diámetro primitivo (PCD) de 95 mm.
+    \item \textbf{Sistema de Sellado:} Canal mecanizado para O-ring de Viton ($\varnothing$ int 67 mm $\times$ 5 mm de sección). El canal tiene una profundidad controlada de 2.5 mm y un ancho de 6.0 mm para garantizar la compresión óptima del elastómero sin dañarlo.
+\end{itemize}
+
+\begin{figure}[H]
+    \centering
+    % INSTRUCCIÓN: Descomenta la línea de abajo y pon el nombre de tu archivo de imagen
+    % \includegraphics[width=0.8\textwidth]{tapa_superior_render.png}
+    \caption{Renderizado técnico de la Tapa Superior con detalle del canal para O-ring.}
+    \label{fig:tapa_superior}
+\end{figure}
+
+\subsection{Brida de Sujeción Inferior (PRM-002)}
+Para evitar modificar la integridad estructural del tubo de la columna con perforaciones directas, se diseñó una brida collarín de 8 mm de espesor que se adhiere químicamente al cuerpo de la columna.
+
+\subsection{Difusor de Flujo (PRM-007)}
+Para asegurar un flujo laminar y distribuido sobre el lecho de suelo, se diseñó un difusor de acero inoxidable 316L.
+
+\begin{figure}[H]
+    \centering
+    % INSTRUCCIÓN: Pon aquí la imagen del difusor
+    % \includegraphics[width=0.6\textwidth]{difusor_render.png}
+    \caption{Diseño del difusor de flujo con patrón de perforaciones concéntricas.}
+    \label{fig:difusor}
+\end{figure}
+
+\section{Especificaciones de Manufactura}
+Para garantizar la funcionalidad del diseño, se establecieron tolerancias críticas de fabricación.
+
+\begin{table}[H]
+\centering
+\caption{Resumen de Especificaciones Críticas de Manufactura}
+\label{tab:especificaciones}
+\begin{tabular}{|l|p{6cm}|l|}
+\hline
+\textbf{Componente} & \textbf{Característica Crítica} & \textbf{Tolerancia} \\
+\hline
+Tapa Superior & Profundidad Canal O-ring & $2.5 \pm 0.05$ mm \\
+\hline
+Tapa Superior & Planicidad cara de sellado & $< 0.05$ mm \\
+\hline
+Difusor & Diámetro de perforaciones & $2.0 \pm 0.1$ mm \\
+\hline
+Todas & Posición de pernos (PCD) & $\pm 0.2$ mm \\
+\hline
+\end{tabular}
+\end{table}
+
+\section{Procedimiento de Ensamblaje y Validación}
+El protocolo de ensamblaje es crucial para el éxito del sellado. Se establece una secuencia de apriete en estrella para los 8 pernos M6, con un par de apriete final limitado a 5 Nm para evitar el agrietamiento del acrílico.
+
+\begin{figure}[H]
+    \centering
+    % INSTRUCCIÓN: Pon aquí el diagrama de secuencia de apriete si lo tienes
+    % \includegraphics[width=0.5\textwidth]{secuencia_apriete.png}
+    \caption{Secuencia de apriete en estrella para distribución uniforme de esfuerzos.}
+    \label{fig:secuencia}
+\end{figure}
+
+\section{Conclusiones}
+El rediseño presentado soluciona de manera integral los problemas de filtración del permeámetro original. La implementación de una brida atornillada con alojamiento confinado para O-ring eleva la presión operativa segura y mejora la repetibilidad de los experimentos.
+
+Este diseño modular permite además un mantenimiento simplificado y la posibilidad de intercambiar componentes sin descartar la columna principal, lo cual representa una ventaja económica y operativa para el laboratorio.
+
+% --- BIBLIOGRAFÍA (Ejemplo) ---
+\begin{thebibliography}{9}
+\bibitem{astm}
+ASTM International. (2020). \textit{Standard Test Methods for Measurement of Hydraulic Conductivity of Saturated Porous Materials Using a Flexible Wall Permeameter (D5084)}. West Conshohocken, PA.
+
+\bibitem{klute}
+Klute, A., \& Dirksen, C. (1986). \textit{Hydraulic conductivity and diffusivity: Laboratory methods}. In A. Klute (Ed.), Methods of soil analysis: Part 1—Physical and mineralogical methods (pp. 687–734).
+
+\end{thebibliography}
+
+\end{document}

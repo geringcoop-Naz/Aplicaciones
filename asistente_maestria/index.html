@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asistente Maestría - Ciencias del Agua</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="calendar-projects.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">
+                <i class="fas fa-water"></i>
+                <h2>Maestría<br><span>Ciencias del Agua</span></h2>
+            </div>
+        </div>
+
+        <nav class="sidebar-nav">
+            <a href="#" class="nav-item active" data-section="dashboard">
+                <i class="fas fa-th-large"></i>
+                <span>Dashboard</span>
+            </a>
+            <a href="#" class="nav-item" data-section="academico">
+                <i class="fas fa-graduation-cap"></i>
+                <span>Plan de Estudios</span>
+            </a>
+            <a href="#" class="nav-item" data-section="investigacion">
+                <i class="fas fa-flask"></i>
+                <span>Investigación</span>
+            </a>
+            <a href="#" class="nav-item" data-section="finanzas">
+                <i class="fas fa-wallet"></i>
+                <span>Finanzas</span>
+            </a>
+            <a href="#" class="nav-item" data-section="calendario">
+                <i class="fas fa-calendar-alt"></i>
+                <span>Calendario</span>
+            </a>
+            <a href="#" class="nav-item" data-section="proyectos">
+                <i class="fas fa-project-diagram"></i>
+                <span>Proyectos</span>
+            </a>
+            <a href="#" class="nav-item" data-section="configuracion">
+                <i class="fas fa-cog"></i>
+                <span>Configuración</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <div class="user-info">
+                <div class="user-avatar">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="user-details">
+                    <p class="user-name">Estudiante</p>
+                    <p class="user-role">Maestría 2026</p>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Dashboard Section -->
+        <section id="dashboard" class="section active">
+            <div class="section-header">
+                <h1>Dashboard</h1>
+                <p class="subtitle">Vista general de tu progreso académico y financiero</p>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon blue">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Materias Activas</h3>
+                        <p class="stat-value">5</p>
+                        <span class="stat-label">Este semestre</span>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon green">
+                        <i class="fas fa-percent"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Progreso</h3>
+                        <p class="stat-value">45%</p>
+                        <span class="stat-label">Del programa</span>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon purple">
+                        <i class="fas fa-coins"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Balance</h3>
+                        <p class="stat-value">$12,450</p>
+                        <span class="stat-label">Disponible</span>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon orange">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Publicaciones</h3>
+                        <p class="stat-value">23</p>
+                        <span class="stat-label">Nuevas esta semana</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard-grid">
+                <!-- Quick Academic Overview -->
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-graduation-cap"></i> Próximas Entregas</h3>
+                        <a href="#" class="card-action">Ver todo</a>
+                    </div>
+                    <div class="card-content">
+                        <div class="task-item urgent">
+                            <div class="task-icon">
+                                <i class="fas fa-exclamation-circle"></i>
+                            </div>
+                            <div class="task-info">
+                                <p class="task-title">Proyecto Final - Hidrología</p>
+                                <p class="task-date">Vence en 2 días</p>
+                            </div>
+                        </div>
+                        <div class="task-item">
+                            <div class="task-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div class="task-info">
+                                <p class="task-title">Reporte Lab - Calidad del Agua</p>
+                                <p class="task-date">Vence en 5 días</p>
+                            </div>
+                        </div>
+                        <div class="task-item">
+                            <div class="task-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="task-info">
+                                <p class="task-title">Examen Parcial - Modelación</p>
+                                <p class="task-date">18 de Enero</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Financial Summary -->
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-chart-line"></i> Resumen Financiero</h3>
+                        <a href="#" class="card-action">Detalles</a>
+                    </div>
+                    <div class="card-content">
+                        <div class="finance-summary">
+                            <div class="finance-item income">
+                                <span class="finance-label">
+                                    <i class="fas fa-arrow-down"></i> Ingresos (Beca)
+                                </span>
+                                <span class="finance-value">$15,000</span>
+                            </div>
+                            <div class="finance-item expense">
+                                <span class="finance-label">
+                                    <i class="fas fa-arrow-up"></i> Gastos Fijos
+                                </span>
+                                <span class="finance-value">$8,500</span>
+                            </div>
+                            <div class="finance-item">
+                                <span class="finance-label">
+                                    <i class="fas fa-shopping-cart"></i> Gastos Variables
+                                </span>
+                                <span class="finance-value">$3,200</span>
+                            </div>
+                            <div class="balance-bar">
+                                <div class="balance-fill" style="width: 65%"></div>
+                            </div>
+                            <p class="balance-text">Ahorro mensual: <strong>$3,300</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Research -->
+            <div class="dashboard-card full-width">
+                <div class="card-header">
+                    <h3><i class="fas fa-newspaper"></i> Publicaciones Recientes</h3>
+                    <a href="#" class="card-action">Ver más</a>
+                </div>
+                <div class="card-content">
+                    <div class="research-grid">
+                        <div class="research-item">
+                            <span class="research-badge">Nature Water</span>
+                            <h4>Novel approaches to urban water management in changing climate</h4>
+                            <p class="research-meta">
+                                <i class="fas fa-calendar"></i> 10 Ene 2026 &nbsp;
+                                <i class="fas fa-user"></i> Smith et al.
+                            </p>
+                        </div>
+                        <div class="research-item">
+                            <span class="research-badge trending">Water Research</span>
+                            <h4>Machine learning for water quality prediction: A review</h4>
+                            <p class="research-meta">
+                                <i class="fas fa-calendar"></i> 8 Ene 2026 &nbsp;
+                                <i class="fas fa-user"></i> Zhang & Wang
+                            </p>
+                        </div>
+                        <div class="research-item">
+                            <span class="research-badge">Hydrology</span>
+                            <h4>Impact of land use changes on watershed hydrology</h4>
+                            <p class="research-meta">
+                                <i class="fas fa-calendar"></i> 5 Ene 2026 &nbsp;
+                                <i class="fas fa-user"></i> García et al.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Academic Section -->
+        <section id="academico" class="section">
+            <div class="section-header">
+                <h1>Plan de Estudios</h1>
+                <p class="subtitle">Seguimiento de materias y créditos</p>
+            </div>
+
+            <div class="academic-summary">
+                <div class="progress-card">
+                    <h3>Progreso del Programa</h3>
+                    <div class="circular-progress">
+                        <svg width="200" height="200">
+                            <circle cx="100" cy="100" r="90" stroke="#e0e0e0" stroke-width="20" fill="none" />
+                            <circle cx="100" cy="100" r="90" stroke="url(#gradient)" stroke-width="20" fill="none"
+                                stroke-dasharray="565" stroke-dashoffset="310" transform="rotate(-90 100 100)" />
+                            <defs>
+                                <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                    <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        <div class="progress-text">
+                            <span class="progress-value">45%</span>
+                            <span class="progress-label">Completado</span>
+                        </div>
+                    </div>
+                    <div class="credits-info">
+                        <p><strong>54</strong> de <strong>120</strong> créditos</p>
+                    </div>
+                </div>
+
+                <div class="semester-info">
+                    <h3>Semestre Actual</h3>
+                    <div class="semester-stats">
+                        <div class="semester-stat">
+                            <i class="fas fa-book"></i>
+                            <div>
+                                <p class="stat-number">5</p>
+                                <p class="stat-text">Materias</p>
+                            </div>
+                        </div>
+                        <div class="semester-stat">
+                            <i class="fas fa-star"></i>
+                            <div>
+                                <p class="stat-number">18</p>
+                                <p class="stat-text">Créditos</p>
+                            </div>
+                        </div>
+                        <div class="semester-stat">
+                            <i class="fas fa-chart-line"></i>
+                            <div>
+                                <p class="stat-number">9.2</p>
+                                <p class="stat-text">Promedio</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subjects-container">
+                <h3>Materias Actuales</h3>
+                <div class="subjects-grid">
+                    <div class="subject-card">
+                        <div class="subject-header">
+                            <h4>Hidrología Avanzada</h4>
+                            <span class="subject-credits">6 créditos</span>
+                        </div>
+                        <div class="subject-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 75%"></div>
+                            </div>
+                            <span class="progress-percent">75%</span>
+                        </div>
+                        <div class="subject-info">
+                            <p><i class="fas fa-user"></i> Dr. Martínez</p>
+                            <p><i class="fas fa-clock"></i> Lun-Mié 10:00-12:00</p>
+                        </div>
+                        <div class="subject-grade">
+                            <span class="grade-label">Calificación actual:</span>
+                            <span class="grade-value excellent">9.5</span>
+                        </div>
+                    </div>
+
+                    <div class="subject-card">
+                        <div class="subject-header">
+                            <h4>Calidad del Agua</h4>
+                            <span class="subject-credits">4 créditos</span>
+                        </div>
+                        <div class="subject-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 60%"></div>
+                            </div>
+                            <span class="progress-percent">60%</span>
+                        </div>
+                        <div class="subject-info">
+                            <p><i class="fas fa-user"></i> Dra. López</p>
+                            <p><i class="fas fa-clock"></i> Mar-Jue 14:00-16:00</p>
+                        </div>
+                        <div class="subject-grade">
+                            <span class="grade-label">Calificación actual:</span>
+                            <span class="grade-value good">8.8</span>
+                        </div>
+                    </div>
+
+                    <div class="subject-card">
+                        <div class="subject-header">
+                            <h4>Modelación Hidrológica</h4>
+                            <span class="subject-credits">4 créditos</span>
+                        </div>
+                        <div class="subject-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 50%"></div>
+                            </div>
+                            <span class="progress-percent">50%</span>
+                        </div>
+                        <div class="subject-info">
+                            <p><i class="fas fa-user"></i> Dr. García</p>
+                            <p><i class="fas fa-clock"></i> Vie 9:00-13:00</p>
+                        </div>
+                        <div class="subject-grade">
+                            <span class="grade-label">Calificación actual:</span>
+                            <span class="grade-value good">9.0</span>
+                        </div>
+                    </div>
+
+                    <div class="subject-card">
+                        <div class="subject-header">
+                            <h4>Gestión de Recursos Hídricos</h4>
+                            <span class="subject-credits">3 créditos</span>
+                        </div>
+                        <div class="subject-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 40%"></div>
+                            </div>
+                            <span class="progress-percent">40%</span>
+                        </div>
+                        <div class="subject-info">
+                            <p><i class="fas fa-user"></i> Dr. Ramírez</p>
+                            <p><i class="fas fa-clock"></i> Lun 16:00-19:00</p>
+                        </div>
+                        <div class="subject-grade">
+                            <span class="grade-label">Calificación actual:</span>
+                            <span class="grade-value average">8.5</span>
+                        </div>
+                    </div>
+
+                    <div class="subject-card">
+                        <div class="subject-header">
+                            <h4>Seminario de Investigación</h4>
+                            <span class="subject-credits">1 crédito</span>
+                        </div>
+                        <div class="subject-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 30%"></div>
+                            </div>
+                            <span class="progress-percent">30%</span>
+                        </div>
+                        <div class="subject-info">
+                            <p><i class="fas fa-user"></i> Varios profesores</p>
+                            <p><i class="fas fa-clock"></i> Mié 18:00-20:00</p>
+                        </div>
+                        <div class="subject-grade">
+                            <span class="grade-label">Aprobado/No aprobado</span>
+                            <span class="grade-value">En curso</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Research Section -->
+        <section id="investigacion" class="section">
+            <div class="section-header">
+                <h1>Centro de Investigación</h1>
+                <p class="subtitle">Publicaciones y noticias científicas recientes</p>
+            </div>
+
+            <div class="research-filter">
+                <button class="filter-btn active" data-filter="all">Todas</button>
+                <button class="filter-btn" data-filter="hidrologia">Hidrología</button>
+                <button class="filter-btn" data-filter="calidad">Calidad del Agua</button>
+                <button class="filter-btn" data-filter="cambio-climatico">Cambio Climático</button>
+                <button class="filter-btn" data-filter="gestion">Gestión</button>
+            </div>
+
+            <div class="publications-grid">
+                <article class="publication-card" data-category="hidrologia">
+                    <div class="publication-header">
+                        <span class="journal-badge nature">Nature Water</span>
+                        <span class="publication-date">10 Ene 2026</span>
+                    </div>
+                    <h3>Novel approaches to urban water management in changing climate scenarios</h3>
+                    <p class="publication-abstract">
+                        This study presents innovative strategies for urban water management considering
+                        climate change impacts. Results show 35% improvement in water security...
+                    </p>
+                    <div class="publication-footer">
+                        <span class="authors"><i class="fas fa-users"></i> Smith, J. et al.</span>
+                        <span class="citations"><i class="fas fa-quote-right"></i> 12 citaciones</span>
+                        <a href="#" class="read-more">Leer más <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                    </publication-card>
+
+                    <article class="publication-card trending" data-category="calidad">
+                        <div class="publication-header">
+                            <span class="journal-badge water-research">Water Research</span>
+                            <span class="publication-date">8 Ene 2026</span>
+                            <span class="trending-badge"><i class="fas fa-fire"></i> Tendencia</span>
+                        </div>
+                        <h3>Machine learning applications for real-time water quality monitoring: A comprehensive review
+                        </h3>
+                        <p class="publication-abstract">
+                            Comprehensive review of ML techniques for water quality prediction.
+                            Random Forest and LSTM networks show superior performance...
+                        </p>
+                        <div class="publication-footer">
+                            <span class="authors"><i class="fas fa-users"></i> Zhang, L. & Wang, M.</span>
+                            <span class="citations"><i class="fas fa-quote-right"></i> 45 citaciones</span>
+                            <a href="#" class="read-more">Leer más <i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="publication-card" data-category="cambio-climatico">
+                        <div class="publication-header">
+                            <span class="journal-badge hydrology">Hydrology Journal</span>
+                            <span class="publication-date">5 Ene 2026</span>
+                        </div>
+                        <h3>Impact of land use changes on watershed hydrology: A multi-temporal analysis</h3>
+                        <p class="publication-abstract">
+                            Analysis of 30 years of land use data reveals significant impacts on runoff patterns.
+                            Urbanization increased peak flows by 40%...
+                        </p>
+                        <div class="publication-footer">
+                            <span class="authors"><i class="fas fa-users"></i> García, R. et al.</span>
+                            <span class="citations"><i class="fas fa-quote-right"></i> 23 citaciones</span>
+                            <a href="#" class="read-more">Leer más <i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="publication-card" data-category="gestion">
+                        <div class="publication-header">
+                            <span class="journal-badge">Water Policy</span>
+                            <span class="publication-date">3 Ene 2026</span>
+                        </div>
+                        <h3>Integrated water resources management: Lessons from global case studies</h3>
+                        <p class="publication-abstract">
+                            Comparative analysis of IWRM implementation across different socio-economic contexts.
+                            Stakeholder participation emerges as critical success factor...
+                        </p>
+                        <div class="publication-footer">
+                            <span class="authors"><i class="fas fa-users"></i> Johnson, A. et al.</span>
+                            <span class="citations"><i class="fas fa-quote-right"></i> 18 citaciones</span>
+                            <a href="#" class="read-more">Leer más <i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </article>
+            </div>
+        </section>
+
+        <!-- Finance Section -->
+        <section id="finanzas" class="section">
+            <div class="section-header">
+                <h1>Gestor Financiero</h1>
+                <p class="subtitle">Control de ingresos, gastos y ahorro</p>
+            </div>
+
+            <div class="finance-overview">
+                <div class="finance-card balance">
+                    <div class="finance-card-header">
+                        <i class="fas fa-wallet"></i>
+                        <h3>Balance Actual</h3>
+                    </div>
+                    <p class="finance-amount">$12,450.00</p>
+                    <p class="finance-change positive">
+                        <i class="fas fa-arrow-up"></i> +$1,200 este mes
+                    </p>
+                </div>
+
+                <div class="finance-card income">
+                    <div class="finance-card-header">
+                        <i class="fas fa-arrow-down"></i>
+                        <h3>Ingresos Mensuales</h3>
+                    </div>
+                    <p class="finance-amount">$15,000.00</p>
+                    <p class="finance-detail">Beca CONACYT</p>
+                </div>
+
+                <div class="finance-card expenses">
+                    <div class="finance-card-header">
+                        <i class="fas fa-arrow-up"></i>
+                        <h3>Gastos Totales</h3>
+                    </div>
+                    <p class="finance-amount">$11,700.00</p>
+                    <p class="finance-detail">Fijos + Variables</p>
+                </div>
+
+                <div class="finance-card savings">
+                    <div class="finance-card-header">
+                        <i class="fas fa-piggy-bank"></i>
+                        <h3>Ahorro Mensual</h3>
+                    </div>
+                    <p class="finance-amount">$3,300.00</p>
+                    <p class="finance-detail">22% de ingresos</p>
+                </div>
+            </div>
+
+            <div class="expenses-section">
+                <div class="expenses-breakdown">
+                    <h3><i class="fas fa-chart-pie"></i> Desglose de Gastos</h3>
+
+                    <div class="expense-category">
+                        <div class="category-header">
+                            <h4><i class="fas fa-home"></i> Gastos Fijos</h4>
+                            <span class="category-total">$8,500.00</span>
+                        </div>
+                        <div class="expense-items">
+                            <div class="expense-item">
+                                <div class="expense-info">
+                                    <span class="expense-name">Renta</span>
+                                    <div class="expense-bar">
+                                        <div class="expense-fill" style="width: 70%"></div>
+                                    </div>
+                                </div>
+                                <span class="expense-amount">$6,000.00</span>
+                            </div>
+                            <div class="expense-item">
+                                <div class="expense-info">
+                                    <span class="expense-name">Servicios (Luz, Agua, Internet)</span>
+                                    <div class="expense-bar">
+                                        <div class="expense-fill" style="width: 20%"></div>
+                                    </div>
+                                </div>
+                                <span class="expense-amount">$1,500.00</span>
+                            </div>
+                            <div class="expense-item">
+                                <div class="expense-info">
+                                    <span class="expense-name">Transporte</span>
+                                    <div class="expense-bar">
+                                        <div class="expense-fill" style="width: 10%"></div>
+                                    </div>
+                                </div>
+                                <span class="expense-amount">$1,000.00</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="expense-category">
+                        <div class="category-header">
+                            <h4><i class="fas fa-shopping-cart"></i> Gastos Corrientes</h4>
+                            <span class="category-total">$3,200.00</span>
+                        </div>
+                        <div class="expense-items">
+                            <div class="expense-item">
+                                <div class="expense-info">
+                                    <span class="expense-name">Alimentación</span>
+                                    <div class="expense-bar">
+                                        <div class="expense-fill" style="width: 60%"></div>
+                                    </div>
+                                </div>
+                                <span class="expense-amount">$1,800.00</span>
+                            </div>
+                            <div class="expense-item">
+                                <div class="expense-info">
+                                    <span class="expense-name">Material de Estudio</span>
+                                    <div class="expense-bar">
+                                        <div class="expense-fill" style="width: 25%"></div>
+                                    </div>
+                                </div>
+                                <span class="expense-amount">$800.00</span>
+                            </div>
+                            <div class="expense-item">
+                                <div class="expense-info">
+                                    <span class="expense-name">Personal</span>
+                                    <div class="expense-bar">
+                                        <div class="expense-fill" style="width: 15%"></div>
+                                    </div>
+                                </div>
+                                <span class="expense-amount">$600.00</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="btn-primary">
+                        <i class="fas fa-plus"></i> Agregar Gasto
+                    </button>
+                </div>
+
+                <div class="financial-chart">
+                    <h3><i class="fas fa-chart-line"></i> Tendencia Mensual</h3>
+                    <div class="chart-placeholder">
+                        <canvas id="financeChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Calendar Section -->
+        <section id="calendario" class="section">
+            <div class="section-header">
+                <h1>Calendario Académico</h1>
+                <p class="subtitle">Organiza tus actividades y entregas</p>
+            </div>
+
+            <div class="calendar-controls">
+                <button class="btn-calendar" id="prevMonth">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <h2 id="currentMonth">Enero 2026</h2>
+                <button class="btn-calendar" id="nextMonth">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                <button class="btn-primary" id="addEventBtn">
+                    <i class="fas fa-plus"></i> Nueva Actividad
+                </button>
+            </div>
+
+            <div class="calendar-grid">
+                <div class="calendar-header">Domingo</div>
+                <div class="calendar-header">Lunes</div>
+                <div class="calendar-header">Martes</div>
+                <div class="calendar-header">Miércoles</div>
+                <div class="calendar-header">Jueves</div>
+                <div class="calendar-header">Viernes</div>
+                <div class="calendar-header">Sábado</div>
+                <!-- Calendar days will be generated by JavaScript -->
+            </div>
+
+            <div class="upcoming-events">
+                <h3><i class="fas fa-list"></i> Actividades Próximas</h3>
+                <div id="eventsList" class="events-list">
+                    <!-- Events will be populated by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="proyectos" class="section">
+            <div class="section-header">
+                <h1>Proyectos de Investigación</h1>
+                <p class="subtitle">Gestiona tus proyectos y conecta con GitHub</p>
+            </div>
+
+            <div class="projects-toolbar">
+                <button class="btn-primary" id="addProjectBtn">
+                    <i class="fas fa-plus"></i> Nuevo Proyecto
+                </button>
+                <button class="btn-github" id="connectGitHubBtn">
+                    <i class="fab fa-github"></i> Conectar GitHub
+                </button>
+                <div class="project-filters">
+                    <button class="filter-btn active" data-filter="all">Todos</button>
+                    <button class="filter-btn" data-filter="active">Activos</button>
+                    <button class="filter-btn" data-filter="completed">Completados</button>
+                </div>
+            </div>
+
+            <div class="projects-grid" id="projectsContainer">
+                <!-- Sample Project 1 -->
+                <div class="project-card" data-status="active" data-project-id="1">
+                    <div class="project-header">
+                        <div class="project-title-section">
+                            <h3>Permeámetro 3D</h3>
+                            <span class="project-badge active">Activo</span>
+                        </div>
+                        <div class="project-actions">
+                            <button class="btn-icon" title="Editar">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button class="btn-icon" title="GitHub">
+                                <i class="fab fa-github"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <p class="project-description">
+                        Diseño y fabricación de permeámetro mediante impresión 3D con
+                        sistema de sellado dual.
+                    </p>
+
+                    <div class="project-meta">
+                        <span><i class="fas fa-folder"></i> Tesis</span>
+                        <span><i class="fas fa-calendar"></i> Mar 2026</span>
+                        <span><i class="fas fa-code-branch"></i> 23 commits</span>
+                    </div>
+
+                    <div class="project-progress">
+                        <div class="progress-header">
+                            <span>Progreso General</span>
+                            <span class="progress-value">85%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 85%"></div>
+                        </div>
+                    </div>
+
+                    <div class="project-tasks">
+                        <div class="task-summary">
+                            <span><i class="fas fa-check-circle"></i> 17/20 tareas</span>
+                            <span><i class="fas fa-clock"></i> 15 días restantes</span>
+                        </div>
+                    </div>
+
+                    <div class="project-timeline">
+                        <h4>Fases del Proyecto</h4>
+                        <div class="phase-item completed">
+                            <i class="fas fa-check"></i>
+                            <span>Diseño Conceptual</span>
+                        </div>
+                        <div class="phase-item completed">
+                            <i class="fas fa-check"></i>
+                            <span>Modelado 3D</span>
+                        </div>
+                        <div class="phase-item active">
+                            <i class="fas fa-spinner fa-spin"></i>
+                            <span>Fabricación</span>
+                        </div>
+                        <div class="phase-item pending">
+                            <i class="fas fa-circle"></i>
+                            <span>Pruebas y Validación</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sample Project 2 -->
+                <div class="project-card" data-status="active" data-project-id="2">
+                    <div class="project-header">
+                        <div class="project-title-section">
+                            <h3>Análisis de Calidad del Agua</h3>
+                            <span class="project-badge active">Activo</span>
+                        </div>
+                        <div class="project-actions">
+                            <button class="btn-icon">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button class="btn-icon">
+                                <i class="fab fa-github"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <p class="project-description">
+                        Monitoreo y análisis de parámetros fisicoquímicos en cuenca urbana.
+                    </p>
+
+                    <div class="project-meta">
+                        <span><i class="fas fa-folder"></i> Proyecto Final</span>
+                        <span><i class="fas fa-calendar"></i> Feb 2026</span>
+                        <span><i class="fas fa-code-branch"></i> 45 commits</span>
+                    </div>
+
+                    <div class="project-progress">
+                        <div class="progress-header">
+                            <span>Progreso General</span>
+                            <span class="progress-value">60%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 60%"></div>
+                        </div>
+                    </div>
+
+                    <div class="project-tasks">
+                        <div class="task-summary">
+                            <span><i class="fas fa-check-circle"></i> 9/15 tareas</span>
+                            <span><i class="fas fa-clock"></i> 30 días restantes</span>
+                        </div>
+                    </div>
+
+                    <div class="project-timeline">
+                        <h4>Fases del Proyecto</h4>
+                        <div class="phase-item completed">
+                            <i class="fas fa-check"></i>
+                            <span>Revisión Bibliográfica</span>
+                        </div>
+                        <div class="phase-item active">
+                            <i class="fas fa-spinner fa-spin"></i>
+                            <span>Muestreo de Campo</span>
+                        </div>
+                        <div class="phase-item pending">
+                            <i class="fas fa-circle"></i>
+                            <span>Análisis de Laboratorio</span>
+                        </div>
+                        <div class="phase-item pending">
+                            <i class="fas fa-circle"></i>
+                            <span>Redacción de Reporte</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sample Project 3 -->
+                <div class="project-card" data-status="completed" data-project-id="3">
+                    <div class="project-header">
+                        <div class="project-title-section">
+                            <h3>Modelo Hidrológico Regional</h3>
+                            <span class="project-badge completed">Completado</span>
+                        </div>
+                        <div class="project-actions">
+                            <button class="btn-icon">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button class="btn-icon">
+                                <i class="fab fa-github"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <p class="project-description">
+                        Modelación de escorrentía usando HEC-HMS para análisis de crecidas.
+                    </p>
+
+                    <div class="project-meta">
+                        <span><i class="fas fa-folder"></i> Materia</span>
+                        <span><i class="fas fa-calendar"></i> Dic 2025</span>
+                        <span><i class="fas fa-code-branch"></i> 67 commits</span>
+                    </div>
+
+                    <div class="project-progress">
+                        <div class="progress-header">
+                            <span>Progreso General</span>
+                            <span class="progress-value">100%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill completed" style="width: 100%"></div>
+                        </div>
+                    </div>
+
+                    <div class="project-tasks">
+                        <div class="task-summary">
+                            <span><i class="fas fa-check-circle"></i> 12/12 tareas</span>
+                            <span class="success"><i class="fas fa-trophy"></i> Finalizado</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GitHub Integration Panel -->
+            <div class="github-panel" id="githubPanel" style="display: none;">
+                <div class="panel-content">
+                    <h3><i class="fab fa-github"></i> Integración con GitHub</h3>
+                    <div class="github-form">
+                        <div class="form-group">
+                            <label>Token de Acceso Personal</label>
+                            <input type="password" id="githubToken" placeholder="ghp_xxxxxxxxxxxxx">
+                            <small>Genera tu token en: GitHub Settings > Developer settings > Personal access
+                                tokens</small>
+                        </div>
+                        <div class="form-group">
+                            <label>Nombre de Usuario</label>
+                            <input type="text" id="githubUsername" placeholder="tu-usuario">
+                        </div>
+                        <div class="form-buttons">
+                            <button class="btn-primary" id="saveGithubBtn">
+                                <i class="fas fa-save"></i> Guardar
+                            </button>
+                            <button class="btn-secondary" id="cancelGithubBtn">
+                                Cancelar
+                            </button>
+                        </div>
+                    </div>
+                    <div class="github-repos" id="githubRepos"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Settings Section -->
+        <section id="configuracion" class="section">
+            <div class="section-header">
+                <h1>Configuración</h1>
+                <p class="subtitle">Personaliza tu asistente</p>
+            </div>
+
+            <div class="settings-grid">
+                <div class="settings-card">
+                    <h3><i class="fas fa-user-cog"></i> Perfil</h3>
+                    <div class="setting-item">
+                        <label>Nombre completo</label>
+                        <input type="text" placeholder="Tu nombre">
+                    </div>
+                    <div class="setting-item">
+                        <label>Programa</label>
+                        <select>
+                            <option>Maestría en Ciencias del Agua</option>
+                        </select>
+                    </div>
+                    <div class="setting-item">
+                        <label>Semestre actual</label>
+                        <input type="number" value="3" min="1" max="6">
+                    </div>
+                </div>
+
+                <div class="settings-card">
+                    <h3><i class="fas fa-bell"></i> Notificaciones</h3>
+                    <div class="setting-toggle">
+                        <label>Entregas próximas</label>
+                        <input type="checkbox" checked>
+                    </div>
+                    <div class="setting-toggle">
+                        <label>Nuevas publicaciones</label>
+                        <input type="checkbox" checked>
+                    </div>
+                    <div class="setting-toggle">
+                        <label>Alertas de gastos</label>
+                        <input type="checkbox">
+                    </div>
+                </div>
+
+                <div class="settings-card">
+                    <h3><i class="fas fa-palette"></i> Apariencia</h3>
+                    <div class="theme-selector">
+                        <button class="theme-btn active" data-theme="light">
+                            <i class="fas fa-sun"></i> Claro
+                        </button>
+                        <button class="theme-btn" data-theme="dark">
+                            <i class="fas fa-moon"></i> Oscuro
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <button class="btn-primary">
+                <i class="fas fa-save"></i> Guardar Cambios
+            </button>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+    <script src="calendar-projects.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,565 @@
+/* ========== CALENDAR STYLES ========== */
+.calendar-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    background: white;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: var(--shadow-md);
+}
+
+.calendar-controls h2 {
+    flex: 1;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.btn-calendar {
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: var(--bg-primary);
+    border-radius: 0.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.btn-calendar:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: scale(1.1);
+}
+
+.calendar-grid {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: var(--shadow-md);
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.calendar-header {
+    text-align: center;
+    font-weight: 600;
+    color: var(--text-secondary);
+    padding: 1rem;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.calendar-day {
+    aspect-ratio: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: var(--transition);
+    position: relative;
+}
+
+.calendar-day:hover {
+    background: var(--bg-primary);
+}
+
+.calendar-day.other-month {
+    color: var(--text-light);
+}
+
+.calendar-day.today {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    font-weight: 700;
+}
+
+.calendar-day.has-event::after {
+    content: '';
+    position: absolute;
+    bottom: 4px;
+    width: 6px;
+    height: 6px;
+    background: var(--warning-color);
+    border-radius: 50%;
+}
+
+.calendar-day.today.has-event::after {
+    background: white;
+}
+
+.upcoming-events {
+    background: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: var(--shadow-md);
+}
+
+.upcoming-events h3 {
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.events-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.event-item {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    background: var(--bg-primary);
+    border-radius: 0.75rem;
+    border-left: 4px solid var(--primary-color);
+    transition: var(--transition);
+}
+
+.event-item:hover {
+    background: white;
+    box-shadow: var(--shadow-md);
+}
+
+.event-item.urgent {
+    border-left-color: var(--danger-color);
+}
+
+.event-date {
+    min-width: 60px;
+    text-align: center;
+}
+
+.event-day {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.event-month {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+}
+
+.event-details {
+    flex: 1;
+}
+
+.event-title {
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.25rem;
+}
+
+.event-time {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.event-type {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background: rgba(102, 126, 234, 0.1);
+    color: var(--primary-color);
+    border-radius: 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+/* ========== PROJECTS STYLES ========== */
+.projects-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.btn-github {
+    background: #24292e;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.btn-github:hover {
+    background: #1b1f23;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.btn-secondary {
+    background: var(--border-color);
+    color: var(--text-primary);
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn-secondary:hover {
+    background: var(--text-light);
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 1.5rem;
+}
+
+.project-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition);
+    border-top: 4px solid var(--primary-color);
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-xl);
+}
+
+.project-card[data-status="completed"] {
+    border-top-color: var(--success-color);
+}
+
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    margin-bottom: 1rem;
+}
+
+.project-title-section {
+    flex: 1;
+}
+
+.project-title-section h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.project-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.project-badge.active {
+    background: rgba(59, 130, 246, 0.1);
+    color: var(--info-color);
+}
+
+.project-badge.completed {
+    background: rgba(16, 185, 129, 0.1);
+    color: var(--success-color);
+}
+
+.project-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.btn-icon {
+    width: 36px;
+    height: 36px;
+    border: none;
+    background: var(--bg-primary);
+    border-radius: 0.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+    color: var(--text-secondary);
+}
+
+.btn-icon:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+.project-description {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.project-meta {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+}
+
+.project-meta span {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.project-progress {
+    margin-bottom: 1.5rem;
+}
+
+.progress-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.progress-header span:first-child {
+    color: var(--text-secondary);
+}
+
+.progress-header .progress-value {
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.project-tasks {
+    padding: 1rem;
+    background: var(--bg-primary);
+    border-radius: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.task-summary {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.task-summary .success {
+    color: var(--success-color);
+    font-weight: 600;
+}
+
+.project-timeline {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.project-timeline h4 {
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+    color: var(--text-secondary);
+}
+
+.phase-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    margin-bottom: 0.5rem;
+    border-radius: 0.5rem;
+    transition: var(--transition);
+}
+
+.phase-item:hover {
+    background: var(--bg-primary);
+}
+
+.phase-item i {
+    width: 20px;
+    text-align: center;
+}
+
+.phase-item.completed {
+    color: var(--success-color);
+}
+
+.phase-item.completed i {
+    color: var(--success-color);
+}
+
+.phase-item.active {
+    background: rgba(102, 126, 234, 0.1);
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+.phase-item.active i {
+    color: var(--primary-color);
+}
+
+.phase-item.pending {
+    color: var(--text-light);
+}
+
+.phase-item.pending i {
+    color: var(--text-light);
+}
+
+.progress-fill.completed {
+    background: var(--success-color);
+}
+
+/* ========== GITHUB PANEL ========== */
+.github-panel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 500px;
+    height: 100vh;
+    background: white;
+    box-shadow: var(--shadow-xl);
+    z-index: 2000;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+}
+
+.github-panel.open {
+    transform: translateX(0);
+}
+
+.panel-content {
+    padding: 2rem;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.panel-content h3 {
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.github-form {
+    margin-bottom: 2rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: var(--text-secondary);
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid var(--border-color);
+    border-radius: 0.5rem;
+    font-family: inherit;
+    transition: var(--transition);
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.form-group small {
+    display: block;
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+    color: var(--text-light);
+}
+
+.form-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.form-buttons .btn-primary,
+.form-buttons .btn-secondary {
+    flex: 1;
+}
+
+.github-repos {
+    margin-top: 2rem;
+}
+
+.repo-item {
+    padding: 1rem;
+    background: var(--bg-primary);
+    border-radius: 0.75rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.repo-item:hover {
+    background: white;
+    box-shadow: var(--shadow-md);
+}
+
+.repo-name {
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.repo-stats {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+/* ========== RESPONSIVE UPDATES ========== */
+@media (max-width: 768px) {
+    .calendar-grid {
+        gap: 0.25rem;
+        padding: 1rem;
+    }
+
+    .calendar-day {
+        font-size: 0.85rem;
+        padding: 0.25rem;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .github-panel {
+        width: 100%;
+    }
+
+    .projects-toolbar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .project-filters {
+        width: 100%;
+    }
+}
